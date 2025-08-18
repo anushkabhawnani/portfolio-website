@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <div class="sidebar">
+  <button class="menu-toggle" aria-controls="site-sidebar" aria-expanded="false">☰ Menu</button>
+  <div class="sidebar" id="site-sidebar" aria-hidden="true">
       <h2 class="title">Portfolio</h2>
       <a href="index.html">Home</a>
       <a href="skills.html">Skills</a>
@@ -16,7 +17,7 @@
       <a href="assets/Anushka Bhawnani Resume.pdf" download="Anushka Bhawnani Resume">Resume</a>
       <a href="contact.html">Contact Me</a>
     </div>
-
+  <div class="sidebar-overlay" hidden></div>
   <div class="main-body">
     <h1 class="name">Anushka Bhawnani | Education</h1>
 
@@ -100,5 +101,50 @@
       </div>
     </div>
   </div>
+  <script>
+    (function() {
+      var toggleButton = document.querySelector('.menu-toggle');
+      var sidebar = document.getElementById('site-sidebar');
+      var overlay = document.querySelector('.sidebar-overlay');
+
+      if (!toggleButton || !sidebar || !overlay) return;
+
+      function openSidebar() {
+        sidebar.classList.add('open');
+        sidebar.setAttribute('aria-hidden', 'false');
+        toggleButton.setAttribute('aria-expanded', 'true');
+        overlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        sidebar.setAttribute('aria-hidden', 'true');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        overlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }
+
+      toggleButton.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      overlay.addEventListener('click', closeSidebar);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+
+      Array.prototype.forEach.call(sidebar.querySelectorAll('a'), function(link) {
+        link.addEventListener('click', closeSidebar);
+      });
+    })();
+  </script>
 </body>
 </html>
