@@ -1,0 +1,935 @@
+:root {
+  --green: #90D26D;
+  --light-green: #D9EDBF;
+  --orange: #FF9800;
+  --dark-green: #2C7865;
+
+}
+
+body {
+  background-color: var(--dark-green);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.main-body {
+  background-color: var(--light-green);
+  padding: 15px;
+  border: 3px solid black;
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 200px;
+  text-align: justify;
+  margin-top: 25px;
+  margin-right: 15px;
+}
+
+.skills {
+  display: inline-block; 
+  background-color: white;
+  border: 2px solid black;
+  padding: 15px;
+  margin: 5px 0px;
+  vertical-align: top;
+  box-shadow: 3px 3px;
+  max-width: 16vw;
+  padding-bottom: 30px;
+}
+
+.summary-info {
+  display: inline-block; 
+  background-color: var(--orange);
+  border: 2px solid black;
+  max-width: 60vw;
+  padding: 15px;
+  margin: 5px 10px 5px 0px;
+  vertical-align: top;
+  box-shadow: 3px 3px;
+}
+
+h2, h3 {
+  margin: 0px;
+  
+}
+
+.name {
+  margin-bottom: 5px;
+  margin-top: 0px;
+  font-size: 36px;
+  font-weight: 1500;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  color: #fff;
+  box-sizing: border-box;
+  position: fixed;
+}
+
+.menu-toggle {
+  display: none;
+  padding: 8px 12px;
+  border: 2px solid black;
+  background-color: var(--orange);
+  color: black;
+  box-shadow: 2px 2px black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sidebar > a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  margin: 0px 10px;
+}
+
+.sidebar > .active {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  background-color: var(--orange);
+  border: 1px solid black;
+  margin: 0px 10px;
+  box-shadow: 1px 1px black;
+}
+
+.sidebar > a:hover {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  background-color: var(--light-green);
+  border: 1px solid black;
+  margin: 0px 10px;
+  box-shadow: 2px 2px;
+}
+
+.sidebar > a:active {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  background-color: var(--green);
+  border: 1px solid black;
+  margin: 0px 10px;
+  box-shadow: 2px 2px;
+}
+
+.title {
+  margin: 30px 15px;
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.profile-pic {
+  width: 250px;
+  height: auto;
+  border: 2px solid black;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.image-div {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+.info-div {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 70%;
+}
+
+ul {
+  padding-left: 15px;
+}
+
+li {
+  padding: 6px 0px;
+}
+
+.seemore-button {
+  text-decoration: none;
+  box-shadow: 2px 2px black;
+  padding: 10px;
+  color: black;
+  background-color: var(--green);
+  margin: -15px auto;
+  border: 2px solid black;
+  display: block;
+  width: max-content;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease
+}
+
+.seemore-button:hover {
+  text-decoration: none;
+  box-shadow: 2px 2px black;
+  padding: 10px;
+  color: white;
+  background-color: var(--dark-green);
+  margin: -15px auto;
+  border: 2px solid black
+}
+
+.seemore-button:active {
+  text-decoration: none;
+  box-shadow: 2px 2px black;
+  padding: 10px;
+  color: black;
+  background-color: var(--orange);
+  margin: -15px auto;
+  border: 2px solid black
+}
+
+.card {
+  display: inline-block;
+  width: 16vw;
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 3px 3px;
+  padding: 15px;
+  height: 30vh;
+  vertical-align: top;
+  margin: 0px 16.3px;
+}
+
+.card-info {
+  margin-bottom: 15px;
+}
+
+.card-image {
+  text-align: center;
+}
+
+.project-image {
+  max-width: 250px;
+  max-height: 150px;
+  border: 2px solid black;
+}
+
+.view-all-div {
+  display: inline-block;
+  margin-left: auto;
+}
+
+.view-all-div:hover {
+  display: inline-block;
+  margin-left: auto;
+}
+
+.view-all-div > a {
+  text-decoration: none;
+  box-shadow: 2px 2px black;
+  padding: 10px 15px;
+  color: black;
+  background-color: var(--orange);
+  border: 2px solid black;
+}
+
+.view-all-div > a:hover {
+  text-decoration: none;
+  box-shadow: 2px 2px black;
+  padding: 10px 15px;
+  color: white;
+  background-color: var(--dark-green);
+  border: 2px solid black;
+}
+
+/* Projects header layout: title left, view-all right */
+.projects {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.projects > h1 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Ensure the cards row drops beneath the header row */
+.projects > div:last-child {
+  width: 100%;
+}
+
+.project-image {
+  width: auto;
+}
+
+.contact-img {
+  max-width: 40px;
+  max-height: 40px;
+  background-color: white;
+  padding: 5px;
+  border: 2px solid black;
+  margin: 0px 5px;
+  box-shadow: 1px 1px;
+}
+
+.contact-me {
+  display: inline-block;
+  vertical-align: bottom;
+  max-width: 50%;
+  margin-right: 15px;
+  margin-top: 18px;
+}
+
+.contact-me a {
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.contact-me a:hover {
+  transform: scale(1.1);
+}
+
+.contact-me a:active {
+  transform: scale(0.95);
+}
+
+/* Skills Page CSS */
+
+.skills-retro-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: left;
+}
+
+.skills-retro-card {
+  display: inline-block;
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 3px 3px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  vertical-align: top;
+  width: 250px;
+  margin: 3px;
+  min-height: 200px;
+  transition: 0.2s ease;
+}
+
+.skills-retro-card:hover {
+  display: inline-block;
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 3px 3px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  vertical-align: top;
+  width: 250px;
+  margin: 3px;
+  min-height: 200px;
+  transform: scale(1.05);
+}
+
+.skills-retro-card h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.achievements {
+  background-color: var(--orange);
+  padding: 20px;
+  box-shadow: 3px 3px black;
+  border: 2px solid black;
+  min-width: 78vw;
+  margin-bottom: 5px;
+  transition: 0.2s ease;
+}
+
+.achievements:hover {
+  background-color: var(--orange);
+  padding: 20px;
+  box-shadow: 3px 3px black;
+  border: 2px solid black;
+  min-width: 78vw;
+  margin-bottom: 5px;
+  transform: scale(1.02)
+}
+
+/* Contact Page CSS */
+
+.contact-container {
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 2px 2px;
+  padding: 35px 20px;
+  min-height: 67vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+input {
+  display: block;
+  padding: 10px;
+  width: 560px;
+  margin: 15px 0px;
+  border: 2px solid black;
+  box-shadow: 1px 1px;
+  background-color: var(--green);
+}
+
+::placeholder {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  display: block;
+  text-align: center;
+  margin: 25px auto;
+  padding: 10px 15px;
+  background-color: var(--orange);
+  border: 2px solid black;
+  box-shadow: 2px 2px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--dark-green);
+  transform: scale(1.1);
+  box-shadow: 2px 2px;
+}
+
+textarea {
+  display: block;
+  padding: 10px;
+  width: 560px;
+  height: 150px;
+  margin: 25px 0px;
+  border: 2px solid black;
+  box-shadow: 1px 1px;
+  resize: vertical;
+  background-color: var(--green);
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  width: 100%;
+  align-self: stretch;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Strong centering specifically for the contact page layout */
+.contact-container .contact-icons {
+  width: 100%;
+  max-width: 600px;
+  justify-content: center !important;
+  margin: 15px auto 0;
+}
+
+.contact-icons a {
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.1);
+}
+
+.contact-icons a:active {
+  transform: scale(0.95);
+}
+
+.contact-img {
+  max-width: 40px;
+  max-height: 40px;
+  background-color: white;
+  padding: 5px;
+  border: 2px solid black;
+  box-shadow: 1px 1px;
+}
+
+/* Education Page CSS - Horizontal Timeline */
+
+.horizontal-timeline {
+  position: relative;
+  margin: 0px;
+  padding: 20px;
+  overflow-x: auto;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-line-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  right: 50px;
+  height: 6px;
+  background: var(--orange);
+  transform: translateY(-50%);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.timeline-item-horizontal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 40px;
+  z-index: 2;
+  min-width: 200px;
+}
+
+/* Alternate cards above and below timeline */
+.timeline-item-horizontal:nth-child(even) .timeline-card-horizontal {
+  margin-top: -170px;
+  margin-bottom: 50px;
+}
+
+.timeline-item-horizontal:nth-child(odd) .timeline-card-horizontal {
+  margin-top: 50px;
+  margin-bottom: -170px;
+}
+
+.timeline-card-horizontal {
+  background: white;
+  border: 2px solid black;
+  box-shadow: 3px 3px;
+  padding: 15px;
+  position: relative;
+  min-height: 120px;
+  width: 200px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.timeline-card-horizontal:hover {
+  background: white;
+  border: 2px solid black;
+  box-shadow: 3px 3px;
+  padding: 15px;
+  position: relative;
+  min-height: 120px;
+  width: 200px;
+  text-align: center;
+  transform: scale(1.1)
+}
+
+/* Arrow pointing down for cards above timeline */
+.timeline-item-horizontal:nth-child(odd) .timeline-card-horizontal::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-bottom-color: black;
+  transform: translateX(-50%);
+}
+
+/* Arrow pointing up for cards below timeline */
+.timeline-item-horizontal:nth-child(even) .timeline-card-horizontal::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-top-color: black;
+  transform: translateX(-50%);
+}
+
+.timeline-date-horizontal {
+  background: var(--green);
+  color: black;
+  padding: 8px 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 2px solid black;
+  box-shadow: 2px 2px;
+  display: inline-block;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.timeline-content-horizontal h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;
+}
+
+.timeline-content-horizontal p {
+  margin: 6px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.timeline-content-horizontal strong {
+  color: black;
+}
+
+/* Certifications Section */
+.certifications-section {
+  margin-top: 5px;
+  padding: 15px;
+  background: var(--orange);
+  border: 2px solid black;
+  box-shadow: 3px 3px;
+}
+
+.certifications-section h2 {
+  margin: 0 0 25px 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+}
+
+.certifications-grid {
+  display: flex;
+  gap: 25px;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.certification-card {
+  background: white;
+  border: 2px solid black;
+  padding: 15px;
+  min-width: 250px;
+  text-align: left;
+  box-shadow: 2px 2px;
+  transition: 0.2s ease;
+}
+
+.certification-card:hover {
+  background: white;
+  border: 2px solid black;
+  padding: 15px;
+  min-width: 250px;
+  text-align: left;
+  box-shadow: 2px 2px;
+  transform: scale(1.05);
+}
+
+.certification-card h4 {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;
+}
+
+.certification-card p {
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+
+.certification-card strong {
+  color: black;
+}
+
+/* Responsive design for horizontal timeline */
+@media (max-width: 768px) {
+  .horizontal-timeline {
+    padding: 30px 10px;
+    flex-direction: column;
+    gap: 30px;
+    min-height: auto;
+  }
+  
+  .timeline-line-horizontal {
+    display: none;
+  }
+  
+  .timeline-item-horizontal {
+    margin: 0;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .timeline-dot-horizontal {
+    display: none;
+  }
+  
+  /* Reset margins for mobile - all cards stack vertically */
+  .timeline-item-horizontal:nth-child(odd) .timeline-card-horizontal,
+  .timeline-item-horizontal:nth-child(even) .timeline-card-horizontal {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .timeline-card-horizontal {
+    width: 100%;
+  }
+  
+  .timeline-card-horizontal::before {
+    display: none;
+  }
+  
+  .certifications-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .certification-card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-card-horizontal {
+    padding: 12px;
+    min-height: 100px;
+  }
+  
+  .timeline-date-horizontal {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  
+  .timeline-content-horizontal h3 {
+    font-size: 1rem;
+  }
+  
+  .timeline-content-horizontal p {
+    font-size: 0.8rem;
+  }
+  
+  .certification-card {
+    width: 95%;
+    padding: 15px;
+  }
+}
+
+/* Home and global responsive tweaks */
+@media (max-width: 992px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+    width: 220px;
+    background-color: var(--dark-green);
+    border-right: 2px solid black;
+    box-shadow: 3px 0 0 0 black;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: inline-block;
+    top: 12px;
+    left: 12px;
+    z-index: 1002;
+    margin: 10px;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+  }
+
+  .main-body {
+    margin: 10px;
+    margin-top: 0px;
+  }
+
+  /* Make all direct sections inside main-body align to the same width */
+  .main-body div {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  .card {
+    padding-bottom: 15px;
+  }
+
+  .summary-info {
+    display: block;
+    width: auto;
+    padding: 15px;
+  }
+
+  .image-div {
+    display: block;
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .profile-pic {
+    width: 60vw;
+    max-width: 320px;
+  }
+
+  .info-div {
+    display: block;
+    max-width: 100%;
+  }
+
+  .skills, .card {
+    display: block;
+    max-width: 100%;
+    width: auto;
+  }
+
+  .card {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+
+  .view-all-div {
+    display: block;
+    margin-left: 0;
+    text-align: right;
+  }
+
+  /* Stack header then view-all below it on small screens */
+  .projects {
+    gap: 8px;
+  }
+
+  .projects .view-all-div {
+    order: 2;
+    width: 100%;
+  }
+
+  .projects > div:last-child {
+    order: 3;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 32px;
+  }
+
+  .profile-pic {
+    width: 70vw;
+    max-width: 360px;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+  }
+
+  .seemore-button {
+    margin: 25px auto;
+  }
+
+  .seemore-button:hover {
+    margin: 25px auto;
+  }
+
+  .contact-img {
+    margin: 0px;
+  }
+}
+
+/* Tablet layout: 2 cards per row */
+@media (min-width: 601px) and (max-width: 992px) {
+  .projects > div:last-child {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .card {
+    width: calc(50% - 10px);
+    margin: 0;
+    height: auto;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+}
+
+/* Optional: keep desktop stable without mid-range overrides. If needed we can add targeted tweaks later. */
+
+/* Large tablets / iPads in landscape (769px – 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .main-body {
+    margin-left: 0; /* sidebar collapses via your existing code */
+    margin: 10px;
+  }
+
+  .skills {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+
+  .card {
+    width: calc(50% - 15px); /* 2 per row */
+  }
+}
+
+/* Disable hover scaling on touch/mobile for skills page */
+@media (hover: none) and (pointer: coarse) {
+  .skills-retro-card:hover {
+    transform: none !important;
+  }
+}

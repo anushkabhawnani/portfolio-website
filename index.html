@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anushka Bhawnani | Portfolio</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <button class="menu-toggle" aria-controls="site-sidebar" aria-expanded="false">☰ Menu</button>
+  <div class="sidebar" id="site-sidebar" aria-hidden="true">
+      <h2 class="title">Portfolio</h2>
+      <a href="index.html" class="active">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="https://github.com/anushkabhawnani" target="_blank">Projects</a>
+      <a href="education.html">Education</a>
+      <a href="assets/Anushka Bhawnani Resume.pdf" download="Anushka Bhawnani Resume">Resume</a>
+      <a href="contact.html">Contact Me</a>
+    </div>
+  <div class="sidebar-overlay" hidden></div>
+  <div class="main-body">
+    <h1 class="name">Anushka Bhawnani</h1>
+    <div class="summary-info">
+      <div class="image-div">
+      <img src="assets/profile pic.jpeg" alt="profile-picture" class="profile-pic"/></div>
+      <div class="info-div">
+      <h2>About me!</h2>
+      <p>Data Scientist | Artist</p>
+      <p>I’m a Second-Year B.Sc. Data Science and Analytics student with a passion for uncovering insights through data. I enjoy working on projects that combine technical precision with creativity. My interests lie in machine learning, data-driven problem-solving, and full-stack development. Beyond academics, I’m an artist and co-founder of an animal rescue, where I’ve learned leadership, collaboration, and adaptability.</p>
+      <div class="contact-me">
+        <a href="https://github.com/anushkabhawnani" target="_blank" style="text-decoration: none;">
+        <img class="contact-img"src="assets/github.png" alt="github"></a>
+        <a href="https://www.linkedin.com/in/anushka-bhawnani-0a3207316/" target="_blank">
+        <img class="contact-img" src="assets/linkedin.jpeg" alt="linkedin"></a>
+        <a href="mailto: anushkab1411@gmail.com" target="_blank">
+        <img class="contact-img" src="assets/email.jpeg" alt="email"></a>
+
+      </div>
+    </div>
+  </div>
+    <div class="skills">
+      <h2>Skills</h2>
+      <hr>
+      <ul>
+        <li>Programming Languages</li>
+        <li>Data Analysis and Visualization</li>
+        <li>Machine Learning</li>
+        <li>Web Development</li>
+        <li>Tools and Platforms</li>
+      </ul>
+      <a href="skills.html" class="seemore-button" style="text-align: center;">See more</a>
+    </div>
+    <div class="projects">
+      <h1 style="display: inline-block;">Projects</h1>
+      <div class="view-all-div">
+        <a href="https://github.com/anushkabhawnani" target="_blank">View all</a>
+      </div>
+      <div style="display: block;">
+      <div class="card">
+        <div class="card-image">
+          <img src="/assets/student retro.jpeg" alt="computer and books scattered around" class="project-image">
+        </div>
+        <div class="card-info">AI-Driven Student Performance Dashboard</div>
+        <a href="https://github.com/anushkabhawnani/student-performance" target="_blank" class="seemore-button" style="text-align: center;">See more</a>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="/assets/finance retro.jpeg" alt="someone handing someone else a dollar bill" class="project-image">
+        </div>
+        <div class="card-info">BudgetIQ: Personal Finance Analyzer</div>
+        <a href="https://github.com/anushkabhawnani/budgetiq"target="_blank" class="seemore-button" style="text-align: center;">See more</a>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="/assets/spotify retro.jpeg" alt="casette retro" class="project-image">
+        </div>
+        <div class="card-info">Shuffl'd: Personalized Spotify Wrapped</div>
+        <a href="https://github.com/anushkabhawnani/spotify-wrapped-shuffl-d" target="_blank" class="seemore-button" style="text-align: center;">See more</a>
+      </div>
+      <div class="card" style="margin-right: 0px;">
+        <div class="card-image">
+          <img src="/assets/instagram retro.jpeg" alt="bell and howell camera retro" class="project-image">
+        </div>
+        <div class="card-info">InstaImpact: Instagram Account Analyzer</div>
+        <a href="https://github.com/anushkabhawnani/instaimpact" target="_blank" class="seemore-button" style="text-align: center;">See more</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var toggleButton = document.querySelector('.menu-toggle');
+      var sidebar = document.getElementById('site-sidebar');
+      var overlay = document.querySelector('.sidebar-overlay');
+
+      if (!toggleButton || !sidebar || !overlay) return;
+
+      function openSidebar() {
+        sidebar.classList.add('open');
+        sidebar.setAttribute('aria-hidden', 'false');
+        toggleButton.setAttribute('aria-expanded', 'true');
+        overlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        sidebar.setAttribute('aria-hidden', 'true');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        overlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }
+
+      toggleButton.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      overlay.addEventListener('click', closeSidebar);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+
+      Array.prototype.forEach.call(sidebar.querySelectorAll('a'), function(link) {
+        link.addEventListener('click', closeSidebar);
+      });
+    })();
+  </script>
+</body>
+</html>
