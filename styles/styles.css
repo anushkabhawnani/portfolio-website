@@ -22,7 +22,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
   text-align: justify;
-  margin: 25px 15px 0px 200px;
+  margin: 20px 15px 0px 200px;
   overflow-x: hidden;
   min-height: 93vh;
 }
@@ -45,7 +45,7 @@ body {
   background-color: var(--reddish);
   border: 2px solid black;
   max-width: 59vw;
-  padding: 15px;
+  padding: 15px 15px 5px 15px;
   margin: 5px 10px 5px 0px;
   vertical-align: top;
   box-shadow: 3px 3px;
@@ -202,7 +202,7 @@ li {
   padding: 15px;
   height: 30vh;
   vertical-align: top;
-  margin: 1vw;
+  margin: 0px 1vw;
 }
 
 .card-info {
