@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anushka Bhawnani | Portfolio</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/bow.ico">
+</head>
+<body>
+  <button class="menu-toggle" aria-controls="site-sidebar" aria-expanded="false">☰ Menu</button>
+  <div class="sidebar" id="site-sidebar" aria-hidden="true">
+      <h2 class="title">Portfolio</h2>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="https://github.com/anushkabhawnani" target="_blank">Projects</a>
+      <a href="education.html">Education</a>
+      <a href="assets/Anushka Bhawnani Resume.pdf" download="Anushka Bhawnani Resume">Resume</a>
+      <a href="contact.html" class="active">Contact Me</a>
+    </div>
+
+    <div class="sidebar-overlay" hidden></div>
+  <div class="main-body" style="min-height: 93vh;">
+    <h1 class="name">Anushka Bhawnani | Contact Me</h1>
+
+  <div class="contact-container">
+    <form action="https://formcarry.com/s/j09RBOIUssn" method="POST" class="formcarry-form">
+      <input type="text" id="name" name="name" placeholder="Name">
+
+      <input type="email" id="email" name="email" placeholder="Email" required>
+
+      <input type="text" id="subject" name="subject" style="margin-bottom: 0px;" required placeholder="Subject">
+
+      <textarea id="message" name="message" rows="5" required placeholder="Message"></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+      <div class="contact-icons">
+        <a href="https://github.com/anushkabhawnani" target="_blank" style="text-decoration: none;">
+        <img class="contact-img"src="assets/github.png" alt="github"></a>
+        <a href="https://www.linkedin.com/in/anushka-bhawnani-0a3207316/" target="_blank">
+        <img class="contact-img" src="assets/linkedin.jpeg" alt="linkedin"></a>
+        <a href="mailto: anushkaiscoding@gmail.com" target="_blank">
+        <img class="contact-img" src="assets/email.jpeg" alt="email"></a>
+
+      </div>
+  </div>
+
+    
+  </div>
+  <script>
+    (function() {
+      var toggleButton = document.querySelector('.menu-toggle');
+      var sidebar = document.getElementById('site-sidebar');
+      var overlay = document.querySelector('.sidebar-overlay');
+
+      if (!toggleButton || !sidebar || !overlay) return;
+
+      function openSidebar() {
+        sidebar.classList.add('open');
+        sidebar.setAttribute('aria-hidden', 'false');
+        toggleButton.setAttribute('aria-expanded', 'true');
+        overlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        sidebar.setAttribute('aria-hidden', 'true');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        overlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }
+
+      toggleButton.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      overlay.addEventListener('click', closeSidebar);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+
+      Array.prototype.forEach.call(sidebar.querySelectorAll('a'), function(link) {
+        link.addEventListener('click', closeSidebar);
+      });
+    })();
+  </script>
+</body>
+</html>
